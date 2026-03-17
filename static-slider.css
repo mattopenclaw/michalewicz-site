@@ -1,0 +1,61 @@
+/* Static slider replacement for sr7-module */
+.static-slider-wrap {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.static-slider-wrap .slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.static-slider-wrap .slide.active {
+  opacity: 1;
+}
+.static-slider-wrap .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.static-slider-wrap .slider-prev,
+.static-slider-wrap .slider-next {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  padding: 8px 16px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+.static-slider-wrap .slider-prev { left: 10px; }
+.static-slider-wrap .slider-next { right: 10px; }
+.static-slider-wrap .slider-dots {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.static-slider-wrap .slider-dots span {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  margin: 0 4px;
+  cursor: pointer;
+}
+.static-slider-wrap .slider-dots span.active {
+  background: #fff;
+}
+/* Hide broken sr7-module */
+sr7-module { display: none !important; }
